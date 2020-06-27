@@ -20,9 +20,6 @@ The following information are relevant for your setup:
 * For a working Ryzentosh you need VoodooTSCSyncAMD (Sync amound of CPU Cores/Threads with the OS). You need to edit this file in case you use a different CPU.
 * RadeonBoost has been disabled, because of a bug in OSX 10.15.5. This Kext will increase the GPU processing power. As the issue is also present on a retail Mac, we need to wait for a fix from apple
 
-
-## Setup
-
 ### BIOS settings
 - CSM: disabled
 - Above 4G decoding: disabled (must be enabled for certain older graphics card)
