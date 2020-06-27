@@ -7,9 +7,9 @@ These files are created for my personal setup and should be used as reference fi
 
 ## Ryzen iMac Pro build
 **Prozessor:** AMD Ryzen 9 3900X  
-**Motherboard:** AsRock X570 Phantom Gaming 4 
+**Motherboard:** AsRock X570 Phantom Gaming 4  
 **Storage:** Mushkin Pilot-E (1000GB) M.2 NVMe PCIe  
-**Video Card:** Sapphire Radeon RX 5700 XT Pulse
+**Video Card:** Sapphire Radeon RX 5700 XT Pulse  
 **Fan Controller:** Corsair Commander Pro  
 
 ## Setup
