@@ -36,7 +36,7 @@ Sleep is not working
 Sleep is not working, yet. Based on the information from aluveitie, the secondary XHC controller (USB) is preventing sleep. Sadly this controller is providing support to a lot of the supplied usb ports. If you dont use all slots, you can try to disable the controller.
 
 ### Corsair Commander Pro
-This one is tricky! The corsair commander pro will identify itself as a UPS (Battery) device. Installing while this device is plugged into USB will result in a Segmentation Fault after picking the target storage device. You need to disable the USB port of the Commander Pro.
+This one is tricky! The corsair commander pro will identify itself as a UPS (Battery) device. Installing while this device is plugged into USB will result in a Segmentation Fault after picking the target storage device. You need to disable the USB port where the the Commander Pro is installed. The Commander Pro itself includes an USB2.0 hub and loops though the 2nd USB2.0 port - so you can still use one of the internal usb ports as normal.
 
 ## Cedits and links
 * [Aluveities Setup](https://github.com/aluveitie/RyzenMacPro)
