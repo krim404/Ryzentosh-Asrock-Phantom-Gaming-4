@@ -2184,7 +2184,7 @@
 		<false/>
 		<key>Drivers</key>
 		<array>
-			<string>HfsPlusLegacy.efi</string>
+			<string>OpenHfsPlus.efi</string>
 			<string>OpenRuntime.efi</string>
 		</array>
 		<key>Input</key>
