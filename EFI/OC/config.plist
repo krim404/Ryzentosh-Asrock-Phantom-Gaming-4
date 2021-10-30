@@ -80,7 +80,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Sound-Blaster Injector</string>
+				<string>SoundBlaster Injector</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -204,7 +204,9 @@
 			<key>EnableSafeModeSlide</key>
 			<true/>
 			<key>EnableWriteUnprotector</key>
-			<true/>
+			<false/>
+			<key>ForceBooterSignature</key>
+			<false/>
 			<key>ForceExitBootServices</key>
 			<false/>
 			<key>ProtectMemoryRegions</key>
@@ -1974,6 +1976,10 @@
 			<true/>
 			<key>PowerTimeoutKernelPanic</key>
 			<true/>
+			<key>ProvideCurrentCpuInfo</key>
+			<true/>
+			<key>SetApfsTrimTimeout</key>
+			<integer>-1</integer>
 			<key>ThirdPartyDrives</key>
 			<false/>
 			<key>XhciPortLimit</key>
@@ -1981,10 +1987,12 @@
 		</dict>
 		<key>Scheme</key>
 		<dict>
-			<key>FuzzyMatch</key>
+			<key>CustomKernel</key>
 			<false/>
+			<key>FuzzyMatch</key>
+			<true/>
 			<key>KernelArch</key>
-			<string>Auto</string>
+			<string>x86_64</string>
 			<key>KernelCache</key>
 			<string>Auto</string>
 		</dict>
@@ -2024,7 +2032,7 @@
 			<key>AppleDebug</key>
 			<false/>
 			<key>ApplePanic</key>
-			<false/>
+			<true/>
 			<key>DisableWatchDog</key>
 			<true/>
 			<key>DisplayDelay</key>
@@ -2047,12 +2055,12 @@
 			<true/>
 			<key>AllowSetDefault</key>
 			<true/>
+			<key>AllowToggleSip</key>
+			<false/>
 			<key>ApECID</key>
 			<integer>0</integer>
 			<key>AuthRestart</key>
 			<false/>
-			<key>BootProtect</key>
-			<string>None</string>
 			<key>DmgLoading</key>
 			<string>Signed</string>
 			<key>EnablePassword</key>
@@ -2071,6 +2079,8 @@
 			<string>Optional</string>
 			<key>SecureBootModel</key>
 			<string>j160</string>
+			<key>Vault</key>
+			<string>Optional</string>
 		</dict>
 		<key>Tools</key>
 		<array>
@@ -2167,19 +2177,21 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string>XXXXX</string>
+			<string>XXXXXX</string>
 			<key>ROM</key>
-			<data>
-			ESIzAAAA
-			</data>
+			<data>ESIzAAAA</data>
 			<key>SpoofVendor</key>
 			<true/>
+			<key>ProcessorType</key>
+			<integer>0</integer>
+			<key>SystemMemoryStatus</key>
+			<string>Auto</string>
 			<key>SystemProductName</key>
 			<string>iMacPro1,1</string>
 			<key>SystemSerialNumber</key>
-			<string>XXXXX</string>
+			<string>XXXXXX</string>
 			<key>SystemUUID</key>
-			<string>XXXXX</string>
+			<string>XXXXXX</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -2189,6 +2201,8 @@
 		<true/>
 		<key>UpdateSMBIOSMode</key>
 		<string>Create</string>
+		<key>UseRawUuidEncoding</key>
+		<false/>
 	</dict>
 	<key>UEFI</key>
 	<dict>
@@ -2207,6 +2221,23 @@
 			<key>MinVersion</key>
 			<integer>0</integer>
 		</dict>
+		<key>AppleInput</key>
+		<dict>
+			<key>AppleEvent</key>
+			<string>Builtin</string>
+			<key>CustomDelays</key>
+			<false/>
+			<key>KeyInitialDelay</key>
+			<integer>0</integer>
+			<key>KeySubsequentDelay</key>
+			<integer>5</integer>
+			<key>GraphicsInputMirroring</key>
+			<false/>
+			<key>PointerSpeedDiv</key>
+			<integer>1</integer>
+			<key>PointerSpeedMul</key>
+			<integer>1</integer>
+		</dict>
 		<key>Audio</key>
 		<dict>
 			<key>AudioCodec</key>
@@ -2221,6 +2252,8 @@
 			<integer>20</integer>
 			<key>PlayChime</key>
 			<true/>
+			<key>ResetTrafficClass</key>
+			<false/>
 			<key>VolumeAmplifier</key>
 			<integer>0</integer>
 		</dict>
@@ -2228,8 +2261,30 @@
 		<false/>
 		<key>Drivers</key>
 		<array>
-			<string>OpenHfsPlus.efi</string>
-			<string>OpenRuntime.efi</string>
+			<dict>
+				<key>Path</key>
+				<string>OpenRuntime.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenCanopy.efi</string>
+				<key>Enabled</key>
+				<false/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>Path</key>
+				<string>OpenHfsPlus.efi</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Arguments</key>
+				<string></string>
+			</dict>
 		</array>
 		<key>Input</key>
 		<dict>
@@ -2258,10 +2313,10 @@
 			<false/>
 			<key>ConsoleMode</key>
 			<string></string>
-			<key>DirectGopCacheMode</key>
-			<string></string>
 			<key>DirectGopRendering</key>
 			<false/>
+			<key>GopPassThrough</key>
+			<string>Disabled</string>
 			<key>IgnoreTextInGraphics</key>
 			<false/>
 			<key>ProvideConsoleGop</key>
@@ -2322,15 +2377,21 @@
 		</dict>
 		<key>Quirks</key>
 		<dict>
-			<key>DeduplicateBootOrder</key>
+			<key>ActivateHpetSupport</key>
 			<true/>
+			<key>EnableVectorAcceleration</key>
+			<true/>
+			<key>DisableSecurityPolicy</key>
+			<false/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
+			<key>ForceOcWriteFlash</key>
+			<false/>
+			<key>ForgeUefiSupport</key>
+			<false/>
 			<key>IgnoreInvalidFlexRatio</key>
 			<false/>
 			<key>ReleaseUsbOwnership</key>
-			<false/>
-			<key>RequestBootVarFallback</key>
 			<false/>
 			<key>RequestBootVarRouting</key>
 			<true/>
