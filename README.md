@@ -31,8 +31,9 @@ The supplied USB map disables the 2nd port of the internal usb2.0 header - see K
 In case of a newer firmware, the firmware lacks the posibility to disable the serial port, which will result in a black screen on boot on 11.0.1 - see Known issues
 
 ## Known issues
-Microphone is not yet working  
-Sleep is not working
+Microphone input is not yet working  
+Sleep is not working  
+i211 network is not working since monterey  
 
 ### Sleep
 Sleep is not working, yet. Based on the information from aluveitie, the secondary XHC controller (USB) is preventing sleep. Sadly this controller is providing support to a lot of the supplied usb ports. If you dont use all slots, you can try to disable the controller.
